@@ -44,8 +44,8 @@ class webCameraAnallyMainModule(appBase):
     def frameProcess(self):
         frame = self.webcamera.getImage()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        # viewframe = self.faceAnalize.analizeImage(frame)
-        viewframe = frame
+        viewframe = self.faceAnalize.analizeImage(frame)
+        # viewframe = frame
         cv2.putText(viewframe, 'faceAnalizeTool', (0,50), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255,0), 3, cv2.LINE_AA)
         # 加工済の画像を表示する
         cv2.imshow('Edited Frame', viewframe)
