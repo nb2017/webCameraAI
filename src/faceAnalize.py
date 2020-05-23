@@ -27,6 +27,8 @@ class faceAnalize(appBase):
 
         return src
 
+    def __del__(self):
+        self.destroyModule()
 
 
 if __name__ == '__main__':

@@ -21,3 +21,9 @@ class cameraModule(appBase):
     def destroyModule(self):
         self.cap.release()
         return super().destroyModule()
+    def converetJpegImageForByte(self, src):
+        ret, jpeg = cv2.imencode('.jpg', src)
+        return jpeg.tobytes()
+
+    def __del__(self):
+        self.destroyModule()
